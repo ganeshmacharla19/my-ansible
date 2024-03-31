@@ -3,14 +3,6 @@
   become: true
   become_user: root
   tasks:
-    - name: Mount the OS Media Drive
-      command: mount /dev/sr0 /mnt
-
-    - name: Copy the local repo
-      copy:
-        src: /home/ansible/local.repo
-        dest: /etc/yum.repo.d/
-
     - name: Install VSFTPD package
       yum:
         name: vsftpd
